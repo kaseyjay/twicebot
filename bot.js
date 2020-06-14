@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const bot = new Discord.Client();
+const client = new Discord.Client();
 
 const cheerio = require('cheerio');
 
@@ -8,13 +8,13 @@ const { randomBytes } = require("crypto");
 
 const PREFIX = '-';
 
-bot.on('ready', () =>{
+client.on('ready', () =>{
         console.log('This bot is online!');
         bot.user.setActivity('Twicelights', { type: 'WATCHING'});
 
 });
 
-bot.on('message', message => {
+client.on('message', message => {
     if (message.content.startsWith (PREFIX + "random")) {
         number = 352;
         imageNumber = Math.floor (Math.random() * number) + 1;
@@ -78,4 +78,4 @@ bot.on('message', message => {
 });
 
 
-bot.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
